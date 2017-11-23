@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 31, 2017 alle 15:39
+-- Creato il: Nov 23, 2017 alle 14:21
 -- Versione del server: 5.7.14
 -- Versione PHP: 5.6.25
 
@@ -39,7 +39,6 @@ CREATE TABLE `rates` (
 INSERT INTO `rates` (`id`, `name`, `value`) VALUES
 (1, 'workRate', 22),
 (2, 'travelRate', 15),
-(3, 'travelRate', 15),
 (4, 'kmCost', 0.3);
 
 -- --------------------------------------------------------
@@ -50,7 +49,7 @@ INSERT INTO `rates` (`id`, `name`, `value`) VALUES
 
 CREATE TABLE `report` (
   `id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `date` varchar(255) NOT NULL,
   `ofo` varchar(255) NOT NULL,
   `callNumber` varchar(255) NOT NULL,
   `client` varchar(255) NOT NULL,
@@ -74,6 +73,17 @@ CREATE TABLE `report` (
   `totalCost` double NOT NULL,
   `insertedBy` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `report`
+--
+
+INSERT INTO `report` (`id`, `date`, `ofo`, `callNumber`, `client`, `interventionPlace`, `techNum`, `totalWHours`, `totalTHours`, `km`, `fix`, `WRate`, `TRate`, `kmRate`, `fixRate`, `WCost`, `TCost`, `kmCost`, `fixCost`, `totalServices`, `spareCost`, `transportCost`, `totalCost`, `insertedBy`) VALUES
+(1, '08/11/2017', '17/05389', '17/0000005766', 'COOP', 'Rubiera', 1, 2, 3, 40, 0, 22, 15, 0.3, 0, 44, 45, 0.9, 0, 89.9, 0, 0, 89.9, 0),
+(2, '08/10/2017', '17/05389', '17/0000005766', 'COOP', 'Rubiera', 1, 2, 3, 40, 0, 22, 15, 0.3, 0, 44, 45, 0.9, 0, 89.9, 0, 0, 89.9, 0),
+(3, '08/07/2016', '17/05389', '17/0000005766', 'COOP', 'Rubiera', 1, 2, 3, 40, 0, 22, 15, 0.3, 0, 44, 45, 0.9, 0, 89.9, 0, 0, 89.9, 0),
+(5, '13/11/2017', '17/05389', '17/0000005766', 'COOP', 'Rubiera', 1, 2, 3, 40, 0, 22, 15, 0.3, 0, 44, 45, 0.9, 0, 89.9, 0, 0, 89.9, 0),
+(6, '20/11/2017', '17/05389', '17/0000005766', 'COOP', 'Rubiera', 1, 2, 3, 40, 0, 22, 15, 0.3, 0, 44, 45, 0.9, 0, 89.9, 0, 0, 89.9, 0);
 
 -- --------------------------------------------------------
 
@@ -124,7 +134,7 @@ ALTER TABLE `rates`
 -- AUTO_INCREMENT per la tabella `report`
 --
 ALTER TABLE `report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT per la tabella `users`
 --

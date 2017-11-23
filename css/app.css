@@ -1,0 +1,13 @@
+.report{
+    /*font-size: 20px;*/
+}
+
+.report > td {
+    text-align : center;
+    vertical-align: middle;
+}
+
+.report > th, tr > th {
+    text-align : center;
+    vertical-align: middle;
+}
